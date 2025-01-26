@@ -39,12 +39,12 @@ public class gameDisplay extends JPanel implements MouseListener,
         JLabel topicLabel = new JLabel("Topic: " + topic);
         topicPanel.add(topicLabel);
         frame.add(topicPanel, BorderLayout.PAGE_START);
-        topicLabel.setFont(new Font("Arial", Font.BOLD, 20)); 
+        topicLabel.setFont(new Font("Verdana", Font.BOLD, 16));
         
         // Add Clock TODO
         JPanel clockPanel = new JPanel();
         clock = new JLabel("Time: " + 0.0);
-        clock.setFont(new Font("Arial", Font.BOLD, 20)); 
+        clock.setFont(new Font("Verdana", Font.BOLD, 16));
         clockPanel.add(clock);
         frame.add(clockPanel, BorderLayout.PAGE_START);
 
@@ -70,7 +70,7 @@ public class gameDisplay extends JPanel implements MouseListener,
         // Create bottom panel for colors, time, # of players
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.LINE_AXIS));
-        topPanel.add(bottomPanel);
+        topPanel.add(bottomPanel, BorderLayout.CENTER);
 
         // Adding Slider for Amount of Players
         slider = new JSlider(JSlider.HORIZONTAL, 2, 5, 3);
@@ -93,6 +93,8 @@ public class gameDisplay extends JPanel implements MouseListener,
         // Create Buttons
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS));
+
+        buttonPanel.add(new JLabel("Mode"));
         topPanel.add(buttonPanel);
         buttons = new JButton[3];
 
@@ -216,7 +218,7 @@ public class gameDisplay extends JPanel implements MouseListener,
 
         // Create a label with the player change message
         JLabel label = new JLabel(message, SwingConstants.CENTER);
-        label.setFont(new Font("Arial", Font.BOLD, 20)); 
+        label.setFont(new Font("Verdana", Font.BOLD, 20));
 
         // Add the label to the panel
         panelBlue.add(label, BorderLayout.CENTER);
